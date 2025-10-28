@@ -3,31 +3,34 @@
     <head>
         <meta charset="utf-8">
         <title>Profesor - Adaugă Absență</title>
+        <link rel="stylesheet" href="Style.css">
     </head>
     <body>
-        <h1><center><b>Înregistrare Absență (Materie: [Nume Materie])</b></center></h1>
-        <p>Folosiți formularul de mai jos pentru a înregistra o absență.</p>
-        
-        <form>
-            <fieldset>
-                <legend>Înregistrare Absență</legend>
-                
-                <label for="elev">Selectează Elevul:</label><br>
-                <input type="text" id="elev" value="Ionescu Andrei (Clasa a IX-a A)" readonly><br><br>
-                
-                <label for="data">Data și Ora:</label><br>
-                <input type="datetime-local" id="data" name="data"><br><br>
-                
-                <label for="tip">Tip Absență:</label><br>
-                <select id="tip" name="tip">
-                    <option value="nemotivata">Nemotivată</option>
-                    <option value="motivata">Motivată</option>
-                </select><br><br>
-                
-                <input type="submit" value="Înregistrează Absența">
-            </fieldset>
-        </form>
+        <div class="main-container">
+            <h1><center><b>Înregistrare Absență (Materie: [Nume Materie])</b></center></h1>
+            <p>Folosiți formularul de mai jos pentru a înregistra o absență.</p>
+            
+            <form>
+                <fieldset>
+                    <legend>Înregistrare Absență</legend>
+                    
+                    <label for="elev">Selectează Elevul:</label><br>
+                    <input type="text" id="elev" value="Ionescu Andrei (Clasa a IX-a A)" readonly><br><br>
+                    
+                    <label for="data">Data și Ora:</label><br>
+                    <input type="datetime-local" id="data" name="data"><br><br>
+                    
+                    <label for="tip">Tip Absență:</label><br>
+                    <select id="tip" name="tip">
+                        <option value="nemotivata">Nemotivată</option>
+                        <option value="motivata">Motivată</option>
+                    </select><br><br>
+                    
+                    <input type="submit" value="Înregistrează Absența">
+                </fieldset>
+            </form>
 
-        <p><a href="ProfesorCatalog.html">Înapoi la Catalog</a></p>
+            <p><a href="ProfesorCatalog.html">Înapoi la Catalog</a></p>
+        </div>
     </body>
 </html>
