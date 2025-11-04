@@ -3,21 +3,40 @@
     <head>
         <meta charset="utf-8">
         <title>Catalog Scolar-Catalog</title>
+        <link rel="stylesheet" href="Style.css">
     </head>
     <body>
-        <h1><center><b>Catalog Scolar Online</b></center></h1>
-        <p>Aici puteti accesa catalogul elevilor si optiunile de autentificare pentru diferite roluri.</p>
+        <div class="main-container">
+            
+            <div class="page-header">
+                <h1><center><b>Catalog Scolar Online</b></center></h1>
+            </div>
+            
+            <div class="page-nav">
+                </div>
 
-        <h2>Autentificare</h2>
-        <p>Alege rolul pentru a te conecta:</p>
+            <div class="page-main">
+                <p>Aici puteti accesa catalogul elevilor si optiunile de autentificare pentru diferite roluri.</p>
 
-        <ul>
-            <li><button onclick="window.location.href='LogareStudent.html'">Elev</button></li>
-            <li><button onclick="window.location.href='LogareParinte.html'">Parinte</button></li>
-            <li><button onClick="window.location.href='LogareProfesor.html'">Profesor</button></li>
-            <li><button onClick="window.location.href='LogareAdministrator.html'">Administrator</button></li>
-        </ul>
+                <h2>Autentificare</h2>
+                <p>Alege rolul pentru a te conecta:</p>
 
-        <p><a href="Home.html">Inapoi la pagina principala</a></p>
+                <ul class="role-button-list">
+                    <li><button onclick="window.location.href='LogareStudent.html'">Elev</button></li>
+                    <li><button onclick="window.location.href='LogareParinte.html'">Parinte</button></li>
+                    <li><button onClick="window.location.href='LogareProfesor.html'">Profesor</button></li>
+                    <li><button onClick="window.location.href='LogareAdministrator.html'">Administrator</button></li>
+                </ul>
+            </div>
+            
+            <div class="page-aside">
+                </div>
+
+            <div class="page-footer">
+                <p><a href="Home.html">Inapoi la pagina principala</a></p>
+            </div>
+
+        </div>
+        <a href="#" class="back-to-top">&#9650;</a>
     </body>
 </html>

@@ -2,32 +2,33 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Autentificare Administrator</title>
+        <title>Catalog Scolar - Autentificare Administrator</title>
+        <link rel="stylesheet" href="Style.css">
     </head>
     <body>
-        <h1><center><b>Autentificare Administrator</b></center></h1>
-        <p>Va rugam introduceti datele de acces in catalogul scolar.</p>
+        <div class="main-container">
+            <h1><center><b>Autentificare Administrator</b></center></h1>
+            <p>Vă rugăm introduceți datele de acces pentru a accesa setările și administrarea sistemului.</p>
 
-        <form>
-            <fieldset>
-                
-                <legend>Date de Login</legend>
+            <form action="AdminDashboard.html">
+                <fieldset>
+                    <legend>Date de Login Administrator</legend>
+                    
+                    <label for="username">Nume Administrator:</label><br>
+                    <input type="text" id="username" name="username" required><br><br>
+                    
+                    <label for="password">Parola Master:</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
+                    
+                    <input type="submit" value="Logare">
+                    <input type="reset" value="Anulare">
+                </fieldset>
+            </form>
 
-                <label for="username">Nume Utilizator:</label><br>
-                <input type="text" id="username" name="username" required><br><br>
-
-                <label for="password">Parola:</label><br>
-                <input type="password" id="password" name="password" required><br><br>
-
-                <input type="submit" value="Logare">
-                <input type="reset" value="Anulare">
-    
-            </fieldset>
-        </form>
-
-        <p>
-            <a href="CatalogOnline.html">Inapoi la pagina de autentificare</a> 
-            <a href="Home.html">Pagina Principala</a>
-        </p>
+            <p>
+                <a href="CatalogOnline.html">Înapoi la pagina de autentificare</a> | 
+                <a href="Home.html">Pagina Principală</a>
+            </p>
+        </div>
     </body>
 </html>

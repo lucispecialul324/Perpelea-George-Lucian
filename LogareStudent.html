@@ -2,31 +2,30 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <title>Catalog Scolar - Autentificare Elev</title>
+        <link rel="stylesheet" href="Style.css">
     </head>
     <body>
-        <h1><center><b>Autentificare Elev</b></center></h1>
-        <p>Va rugam introduceti datele de acces in catalogul scolar.</p>
+        <div class="main-container">
+            <h1><center><b>Autentificare Elev</b></center></h1>
+            <p>Vă rugăm introduceți datele de acces în catalogul școlar.</p>
 
-        <form>              <!--Containerul principal al formularului.Grupeaza campurile de intrare-->
-            <fieldset>      <!--Grupeaza  logic elementele inrudite dintr un formular-->.
-
-                <legend>Date de Login</legend> <!--Ofera un titlu discriptiv grupului formart-->
-
-                    <label for="username">Nume Utilizator / CNP:</label><br> <!--Defineste o  eticheta pentru  un camp de intrare-->
-                    <input type="text" id="username" name="username" required><br><br> <!--Creaza un camp de text standard-->
-
+            <form action="ElevCatalog.html">
+                <fieldset>
+                    <legend>Date de Login</legend>
+                    <label for="username">Nume Utilizator/CNP:</label><br>
+                    <input type="text" id="username" name="username" required><br><br>
                     <label for="password">Parola:</label><br>
-                    <input type="password" id="password" name="password" required><br><br> <!--Creaza un camp in care parola este ascunsa de stelute-->
-                    <!--required este un atribut care nu te lasa sa dau submit fara a scrie ceva in casuta corespunzatoare-->
+                    <input type="password" id="password" name="password" required><br><br>
                     <input type="submit" value="Logare">
                     <input type="reset" value="Anulare">
-        
-            </fieldset>
-        </form>
+                    </fieldset>
+            </form>
 
-        <p>
-            <a href="CatalogOnline.html">Inapoi la pagina de autentificare</a> 
-            <a href="Home.html">Pagina Principala</a>
-        </p>
+            <p>
+                <a href="CatalogOnline.html">Înapoi la pagina de autentificare</a> | 
+                <a href="Home.html">Pagina Principală</a>
+            </p>
+        </div>
     </body>
 </html>
