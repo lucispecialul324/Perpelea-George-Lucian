@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Administrator - Gestiune Materii</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h1><center><b>Gestiune Materii și Planuri Cadru</b></center></h1>
+            <p>Definiți materiile predate și numărul standard de ore alocat.</p>
+
+            <h2>Adaugă Materie Nouă</h2>
+            <form action="#"> <fieldset>
+                    <legend>Date Materie</legend>
+                    
+                    <label for="subject_name">Nume Materie:</label><br>
+                    <input type="text" id="subject_name" name="subject_name" placeholder="Ex: Limba Română" required><br><br>
+                    
+                    <label for="hours_per_week">Ore standard/săptămână:</label><br>
+                    <input type="number" id="hours_per_week" name="hours_per_week" min="1" max="10" required><br><br>
+
+                    <input type="submit" value="Adaugă Materia">
+                </fieldset>
+            </form>
+
+            <h2>Lista Materiilor</h2>
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Materie</th>
+                            <th>Nume Materie</th>
+                            <th>Ore Standard/Săpt</th>
+                            <th>Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>M001</td><td>Matematică</td><td>4</td><td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td></tr>
+                        <tr><td>M002</td><td>Limba Română</td><td>4</td><td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td></tr>
+                        <tr><td>M003</td><td>Informatică</td><td>2</td><td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><a href="AdminGestiuneStructura.html">Înapoi la Gestiune Structură</a></p>
+            <p><a href="LogareAdministrator.html">Deconectare</a></p>
+        </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Administrator - Gestiune Clase</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h1><center><b>Gestiune Clase (Adaugă/Editează)</b></center></h1>
+            <p>Adaugă clase noi, editează-le pe cele existente și alocă diriginți.</p>
+
+            <h2>Adaugă Clasă Nouă</h2>
+            <form action="#"> <fieldset>
+                    <legend>Date Clasă</legend>
+                    
+                    <label for="class_name">Denumire Clasă:</label><br>
+                    <input type="text" id="class_name" name="class_name" placeholder="Ex: IX A" required><br><br>
+                    
+                    <label for="class_profile">Profil/Specializare:</label><br>
+                    <input type="text" id="class_profile" name="class_profile" placeholder="Ex: Matematică-Informatică"><br><br>
+
+                    <label for="diriginte_id">Diriginte (Selectează Profesor):</label><br>
+                    <select id="diriginte_id" name="diriginte_id">
+                        <option value="">-- Selectează Dirigintele --</option>
+                        <option value="1">Prof. Ionescu Vasile (Matematică)</option>
+                        <option value="2">Prof. Popescu Maria (Română)</option>
+                    </select><br><br>
+                    
+                    <input type="submit" value="Adaugă Clasa">
+                </fieldset>
+            </form>
+
+            <h2>Clase Existente</h2>
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Clasă</th>
+                            <th>Profil</th>
+                            <th>Diriginte</th>
+                            <th>Nr. Elevi</th>
+                            <th>Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IX A</td>
+                            <td>Științe ale Naturii</td>
+                            <td>Prof. Popescu Maria</td>
+                            <td>28</td>
+                            <td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td>
+                        </tr>
+                        <tr>
+                            <td>X B</td>
+                            <td>Matematică-Informatică</td>
+                            <td>Prof. Ionescu Vasile</td>
+                            <td>25</td>
+                            <td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><a href="AdminGestiuneStructura.html">Înapoi la Gestiune Structură</a></p>
+            <p><a href="LogareAdministrator.html">Deconectare</a></p>
+        </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
+    </body>
+</html>

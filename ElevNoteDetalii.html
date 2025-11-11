@@ -6,16 +6,47 @@
         <link rel="stylesheet" href="Style.css">
     </head>
     <body>
-        <h1><center><b>Note și Medii Obținute</b></center></h1>
+        <div class="main-container">
+            <h1><center><b>Note și Medii Obținute</b></center></h1>
 
-        <p>Situația școlară actuală (va fi generată ca tabel de PHP):</p>
+            <p>Situația școlară actuală (va fi generată ca tabel de PHP):</p>
+            
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Materie</th>
+                            <th>Note Obținute</th>
+                            <th>Medie Curentă</th>
+                            <th>Medie Finală</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Limba Română</td><td>8, 9, 7</td><td>8.00</td><td>N/A</td></tr>
+                        <tr><td>Matematică</td><td>10, 9</td><td>9.50</td><td>N/A</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><a href="ElevCatalog.html">Înapoi la meniul elevului</a></p>
+            <p><a href="LogareStudent.html">Deconectare</a></p>
+        </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
         
-        <ul>
-            <li>Materie: (Ex. Limba Română), Note: (Ex. 8, 9, 7), Medie: (Ex. 8.00)</li>
-            <li>Materie: (Ex. Matematică), Note: (Ex. 10, 9), Medie: (Ex. 9.50)</li>
-        </ul>
-
-        <p><a href="ElevCatalog.html">Înapoi la meniul elevului</a></p>
-        <p><a href="LogareStudent.html">Deconectare</a></p>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
     </body>
 </html>

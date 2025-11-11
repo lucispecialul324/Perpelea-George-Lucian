@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Administrator - Gestiune Semestre</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h1><center><b>Gestiune Semestre/Module</b></center></h1>
+            <p>Definiți și editați structura pe semestre sau module a anului școlar (cu date de început și sfârșit).</p>
+
+            <h2>Semestre/Module Active (Anul Școlar 2025-2026)</h2>
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Denumire</th>
+                            <th>Data Început</th>
+                            <th>Data Sfârșit</th>
+                            <th>Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Semestrul I</td>
+                            <td>01.09.2025</td>
+                            <td>31.01.2026</td>
+                            <td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td>
+                        </tr>
+                        <tr>
+                            <td>Semestrul II</td>
+                            <td>10.02.2026</td>
+                            <td>15.06.2026</td>
+                            <td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Adaugă Semestru/Modul Nou</h2>
+            <form action="#"> <fieldset>
+                    <legend>Adaugă Perioadă</legend>
+                    
+                    <label for="period_name">Nume:</label><br>
+                    <input type="text" id="period_name" name="period_name" placeholder="Ex: Modul 3" required><br><br>
+                    
+                    <label for="p_start_date">Data Început:</label><br>
+                    <input type="date" id="p_start_date" name="p_start_date" required><br><br>
+                    
+                    <label for="p_end_date">Data Sfârșit:</label><br>
+                    <input type="date" id="p_end_date" name="p_end_date" required><br><br>
+                    
+                    <input type="submit" value="Adaugă Perioada">
+                </fieldset>
+            </form>
+
+            <p><a href="AdminSetariSistem.html">Înapoi la Setări Sistem</a></p>
+            <p><a href="LogareAdministrator.html">Deconectare</a></p>
+        </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Administrator - Adaugă Utilizator</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h1><center><b>Adaugă Utilizator Nou</b></center></h1>
+            <p>Completați formularul pentru a crea un cont nou (Elev, Părinte, Profesor sau Administrator).</p>
+
+            <form action="#"> <fieldset>
+                    <legend>Date Utilizator</legend>
+                    
+                    <label for="nume">Nume:</label><br>
+                    <input type="text" id="nume" name="nume" required><br><br>
+                    
+                    <label for="prenume">Prenume:</label><br>
+                    <input type="text" id="prenume" name="prenume" required><br><br>
+                    
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                    
+                    <label for="parola">Parolă Temporară:</label><br>
+                    <input type="password" id="parola" name="parola" required><br><br>
+                    
+                    <label for="rol">Rolul în Sistem:</label><br>
+                    <select id="rol" name="rol" required>
+                        <option value="">-- Selectează Rolul --</option>
+                        <option value="elev">Elev</option>
+                        <option value="parinte">Părinte</option>
+                        <option value="profesor">Profesor</option>
+                        <option value="admin">Administrator</option>
+                    </select><br><br>
+                    
+                    <h3>Detalii Suplimentare (Opțional/Elevi)</h3>
+                    <label for="clasa">Clasa (doar pentru Elevi):</label><br>
+                    <input type="text" id="clasa" name="clasa" placeholder="Ex: IX A"><br><br>
+
+                    <label for="parinte_id">ID Părinte (pentru asociere Elev-Părinte):</label><br>
+                    <input type="text" id="parinte_id" name="parinte_id" placeholder="ID-ul contului de Părinte"><br><br>
+                    
+                    <input type="submit" value="Creează Contul">
+                </fieldset>
+            </form>
+
+            <p><a href="AdminGestiuneUtilizatori.html">Înapoi la Gestiune Utilizatori</a></p>
+            <p><a href="LogareAdministrator.html">Deconectare</a></p>
+        </div>
+    </body>
+</html>
