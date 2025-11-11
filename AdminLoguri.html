@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Administrator - Jurnal de Activitate</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h1><center><b>Log-uri și Jurnal de Activitate</b></center></h1>
+            <p>Vizualizați operațiunile critice și modificările recente efectuate în sistem.</p>
+
+            <h2>Ultimele 100 de Activități</h2>
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ora/Data</th>
+                            <th>Utilizator (ID/Nume)</th>
+                            <th>Rol</th>
+                            <th>Acțiune Efectuată</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-11-10 14:30</td>
+                            <td>Admin (4001)</td>
+                            <td>Administrator</td>
+                            <td>Resetare parolă pentru Elev ID 1005.</td>
+                        </tr>
+                        <tr>
+                            <td>2025-11-10 10:15</td>
+                            <td>Prof. Popescu M.</td>
+                            <td>Profesor</td>
+                            <td>Adăugare notă 9 pentru Elev ID 1003 (Matematică).</td>
+                        </tr>
+                        <tr>
+                            <td>2025-11-09 18:00</td>
+                            <td>Admin (4001)</td>
+                            <td>Administrator</td>
+                            <td>Creare cont Profesor nou: Georgescu Ana.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><a href="AdminSetariSistem.html">Înapoi la Setări Sistem</a></p>
+            <p><a href="LogareAdministrator.html">Deconectare</a></p>
+        </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
+    </body>
+</html>

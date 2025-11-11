@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Administrator - Alocare Profesor</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h1><center><b>Alocare Profesori pe Materii și Clase</b></center></h1>
+            <p>Asociați profesorii cu materiile pe care le predau la fiecare clasă în parte.</p>
+
+            <h2>Formular de Alocare</h2>
+            <form action="#"> <fieldset>
+                    <legend>Alocare Nouă</legend>
+                    
+                    <label for="profesor">Selectează Profesorul:</label><br>
+                    <select id="profesor" name="profesor" required>
+                        <option value="">-- Alege Profesorul --</option>
+                        <option value="1">Prof. Ionescu Vasile (Matematică)</option>
+                        <option value="2">Prof. Popescu Maria (Română)</option>
+                        <option value="3">Prof. Georgescu Ana (Informatică)</option>
+                    </select><br><br>
+                    
+                    <label for="materie">Selectează Materia Predată:</label><br>
+                    <select id="materie" name="materie" required>
+                        <option value="">-- Alege Materia --</option>
+                        <option value="M001">Matematică</option>
+                        <option value="M002">Limba Română</option>
+                        <option value="M003">Informatică</option>
+                    </select><br><br>
+
+                    <label for="clasa">Selectează Clasa:</label><br>
+                    <select id="clasa" name="clasa" required>
+                        <option value="">-- Alege Clasa --</option>
+                        <option value="C001">IX A</option>
+                        <option value="C002">X B</option>
+                        <option value="C003">XI C</option>
+                    </select><br><br>
+                    
+                    <input type="submit" value="Alocă Profesorul">
+                </fieldset>
+            </form>
+
+            <h2>Alocări Existente</h2>
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Profesor</th>
+                            <th>Materie</th>
+                            <th>Clasă</th>
+                            <th>Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Prof. Ionescu Vasile</td>
+                            <td>Matematică</td>
+                            <td>X B</td>
+                            <td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td>
+                        </tr>
+                        <tr>
+                            <td>Prof. Georgescu Ana</td>
+                            <td>Informatică</td>
+                            <td>IX A</td>
+                            <td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><a href="AdminGestiuneStructura.html">Înapoi la Gestiune Structură</a></p>
+            <p><a href="LogareAdministrator.html">Deconectare</a></p>
+        </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
+    </body>
+</html>

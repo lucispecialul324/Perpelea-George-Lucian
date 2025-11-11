@@ -10,14 +10,44 @@
             <h1><center><b>Orarul Elevului: Popescu Ioana</b></center></h1>
             <p>Orarul săptămânal al copilului (va fi generat ca tabel de PHP):</p>
 
-            <ul>
-                <li>Luni, 8:00: (Ex. Matematică)</li>
-                <li>Marți, 9:00: (Ex. Română)</li>
-                <li>Miercuri, 10:00: (Ex. Sport)</li>
-            </ul>
-
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ora</th>
+                            <th>Luni</th>
+                            <th>Marți</th>
+                            <th>Miercuri</th>
+                            <th>Joi</th>
+                            <th>Vineri</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>8:00</td><td>Matematică</td><td>Română</td><td>Sport</td><td>Fizică</td><td>Chimie</td></tr>
+                        <tr><td>9:00</td><td>Română</td><td>Matematică</td><td>Istorie</td><td>Geografie</td><td>Biologie</td></tr>
+                    </tbody>
+                </table>
+            </div>
             <p><a href="ParinteCatalog.html">Înapoi la meniul părinte</a></p>
             <p><a href="LogareParinte.html">Deconectare</a></p>
         </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
     </body>
 </html>

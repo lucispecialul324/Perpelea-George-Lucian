@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Administrator - Caută Utilizator</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <h1><center><b>Căutare și Editare Utilizatori</b></center></h1>
+            <p>Căutați un utilizator după nume, CNP sau rol pentru a-l edita sau șterge.</p>
+
+            <form action="#">
+                <fieldset>
+                    <legend>Filtre de Căutare</legend>
+                    <label for="search_term">Cuvânt cheie (Nume/CNP):</label><br>
+                    <input type="text" id="search_term" name="search_term" placeholder="Ex: Popescu Ion sau 1234567890"><br><br>
+                    
+                    <label for="filter_role">Filtrează după Rol:</label><br>
+                    <select id="filter_role" name="filter_role">
+                        <option value="">Toate Rolurile</option>
+                        <option value="elev">Elev</option>
+                        <option value="profesor">Profesor</option>
+                        <option value="parinte">Părinte</option>
+                    </select><br><br>
+                    
+                    <input type="submit" value="Cauta Utilizatori">
+                </fieldset>
+            </form>
+            
+            <h2>Rezultate Căutare (Tabel)</h2>
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nume Complet</th>
+                            <th>Rol</th>
+                            <th>Clasa/Materie</th>
+                            <th>Email</th>
+                            <th>Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1001</td>
+                            <td>Popescu Ioana</td>
+                            <td>Elev</td>
+                            <td>X A</td>
+                            <td>ioana.p@school.ro</td>
+                            <td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td>
+                        </tr>
+                        <tr>
+                            <td>2005</td>
+                            <td>Ionescu Vasile</td>
+                            <td>Profesor</td>
+                            <td>Matematică</td>
+                            <td>vasi.i@school.ro</td>
+                            <td><a href="#">Editează</a> | <a href="#" style="color: red;">Șterge</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><a href="AdminGestiuneUtilizatori.html">Înapoi la Gestiune Utilizatori</a></p>
+            <p><a href="LogareAdministrator.html">Deconectare</a></p>
+        </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
+    </body>
+</html>

@@ -11,13 +11,43 @@
             <p>Aici sunt afișate notele și mediile copilului dumneavoastră (va fi generat ca tabel de PHP):</p>
             
             <p><strong>Situația Curentă:</strong></p>
-            <ul>
-                <li>Materie: (Ex. Limba Română), Note: (Ex. 8, 9, 7), Medie: (Ex. 8.00)</li>
-                <li>Materie: (Ex. Matematică), Note: (Ex. 10, 9), Medie: (Ex. 9.50)</li>
-            </ul>
-
+            
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Materie</th>
+                            <th>Note Obținute</th>
+                            <th>Medie Curentă</th>
+                            <th>Medie Finală</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Limba Română</td><td>8, 9, 7</td><td>8.00</td><td>N/A</td></tr>
+                        <tr><td>Matematică</td><td>10, 9</td><td>9.50</td><td>N/A</td></tr>
+                    </tbody>
+                </table>
+            </div>
             <p><a href="ParinteCatalog.html">Înapoi la meniul părinte</a></p>
             <p><a href="LogareParinte.html">Deconectare</a></p>
         </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
     </body>
 </html>

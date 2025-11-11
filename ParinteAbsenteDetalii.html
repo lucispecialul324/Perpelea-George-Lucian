@@ -10,13 +10,42 @@
             <h1><center><b>Jurnal Absențe Elev: Popescu Ioana</b></center></h1>
             <p>Lista completă de absențe (va fi generată ca tabel de PHP):</p>
             
-            <ul>
-                <li>Data: (Ex. 25.10.2025), Ora: (Ex. 09:00), Materie: (Ex. Fizică), Statut: (Ex. Nemotivată)</li>
-                <li>Data: (Ex. 26.10.2025), Ora: (Ex. 10:00), Materie: (Ex. Chimie), Statut: (Ex. Motivație în așteptare)</li>
-            </ul>
-            
+            <div class="table-responsive-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Ora</th>
+                            <th>Materie</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>25.10.2025</td><td>09:00</td><td>Fizică</td><td>Nemotivată</td></tr>
+                        <tr><td>26.10.2025</td><td>10:00</td><td>Chimie</td><td>Motivație în așteptare</td></tr>
+                    </tbody>
+                </table>
+            </div>
             <p><a href="ParinteCatalog.html">Înapoi la meniul părinte</a></p>
             <p><a href="LogareParinte.html">Deconectare</a></p>
         </div>
+
+        <button onclick="topFunction()" id="scrollUpButton" title="Mergi Sus">&#x25B2;</button>
+        
+        <script>
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                var mybutton = document.getElementById("scrollUpButton");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+            }
+        </script>
     </body>
 </html>
