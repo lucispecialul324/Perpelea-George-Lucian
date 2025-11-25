@@ -17,57 +17,13 @@ body {
 .main-container {
     width: 90%;
     max-width: 1000px;
-    margin: 40px auto; 
+    margin: 40px auto; /* Spațiu mai mare sus/jos */
     background-color: #ffffff;
-    /* PADDING-ul original este mutat în secțiunile interne de Grid */
-    padding: 0; 
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Umbră mai proeminentă pentru efect 3D */
     position: relative;
     border: none;
-    
-    /* 1. STRUCTURA PRINCIPALĂ - CSS GRID (Aplicat în interiorul containerului) */
-    display: grid;
-    grid-template-areas: 
-        "page-header page-header"
-        "page-nav page-nav"
-        "page-main page-aside"
-        "page-footer page-footer";
-    /* Main (3fr) mai lat decât Aside (1fr) */
-    grid-template-columns: 3fr 1fr; 
-    gap: 20px;
-}
-
-/* Stiluri pentru secțiunile Grid din interiorul .main-container */
-.page-header { 
-    grid-area: page-header; 
-    padding: 30px 30px 10px 30px; 
-}
-
-.page-nav { 
-    grid-area: page-nav; 
-    padding: 0 30px; 
-}
-
-.page-main { 
-    grid-area: page-main; 
-    padding: 10px 20px 30px 30px; 
-}
-
-.page-aside { 
-    grid-area: page-aside; 
-    padding: 10px 30px 30px 20px; 
-    border-left: 1px solid #e0e0e0; 
-}
-
-.page-footer { 
-    grid-area: page-footer; 
-    background-color: #f7f7f7;
-    padding: 15px 30px;
-    border-top: 1px solid #e0e0e0;
-    text-align: center;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
 }
 
 /* Stil specific pentru elementele listei din container (Meniuri) */
@@ -95,32 +51,6 @@ body {
 .main-container ul li:hover {
     background-color: #e5f1ff;
     border-left-color: #3f72af; /* Evidențiere pe stânga la hover */
-}
-
-/* 2. FLEXBOX PENTRU CARDURI (Meniuri principale) */
-.menu-flex-container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-around;
-    padding: 0; 
-    list-style: none;
-    gap: 20px;
-}
-
-.menu-flex-container li {
-    flex: 1 1 45%; /* Două elemente pe rând pe desktop */
-    margin: 0; /* Eliminăm marginile vechi */
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #f9f9f9;
-}
-
-.menu-flex-container li:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Stilizare pictogramă Notificări */
@@ -151,11 +81,6 @@ h1 {
     padding: 10px 0;
     border-bottom: 3px solid #6c9cd5;
     margin-bottom: 30px;
-}
-
-/* Resetarea marginilor pentru H1 ca să nu se extindă în header (pentru Grid) */
-.main-container h1 {
-    margin-top: 0;
 }
 
 h2 {
@@ -189,13 +114,13 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Stilizarea formularelor de logare */
+/* Stilizarea formularelor de logare și administrare (Desktop) */
 fieldset {
     border: 1px solid #cceeff; 
     padding: 25px;
     border-radius: 8px;
     margin: 30px auto;
-    max-width: 450px;
+    max-width: 600px; /* VALOARE MĂRITĂ pentru a arăta bine pe desktop */
     background-color: #f7fcff; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
@@ -207,16 +132,20 @@ legend {
     font-size: 1.2em;
 }
 
+/* Asigurăm că input-urile ocupă toată lățimea disponibilă în interiorul fieldset-ului */
 input[type="text"],
 input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
 textarea,
 select {
-    width: 100%;
+    width: 100%; 
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #a8c0d8;
     border-radius: 6px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Crucial pentru ca padding-ul să nu mărească lățimea totală */
     transition: border-color 0.3s;
 }
 
@@ -292,6 +221,11 @@ tr:nth-child(even) {
     padding: 0;
     border: none;
     margin: 0;
+    /* Anulăm stilurile preluate de la meniul principal */
+    border-bottom: none !important;
+    border-left: none !important;
+    transition: none !important;
+    background-color: transparent !important;
 }
 
 .role-button-list button {
@@ -322,66 +256,133 @@ tr:nth-child(even) {
     display: block;
 }
 
-/* 6. BUTON "MERGI SUS" */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #f44336; 
+/* ========================================================= */
+/* --- Buton Inapoi in Sus (Scroll-to-Top) --- */
+/* ========================================================= */
+#scrollUpButton {
+    display: none; /* Ascuns implicit */
+    position: fixed; /* Fixat pe ecran */
+    bottom: 30px; /* Distanța de jos */
+    right: 30px; /* Distanța din dreapta */
+    z-index: 999; /* Deasupra celorlalte elemente */
+    border: none;
+    outline: none;
+    background-color: #1a5c96; /* Culoarea primară */
     color: white;
+    cursor: pointer;
     padding: 10px 15px;
-    border-radius: 50%; 
-    text-decoration: none;
-    font-size: 1.2em;
+    border-radius: 5px;
+    font-size: 18px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-    line-height: 1; 
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#scrollUpButton:hover {
+    background-color: #3f72af; 
 }
 
 
-/* 3. & 4. DESIGN RESPONSIV - @media queries (Mobil sub 900px) */
+/* ========================================================= */
+/* --- 3. DESIGN RESPONSIV (@media queries pentru MOBIL) --- */
+/* ========================================================= */
+
 @media (max-width: 900px) {
-    /* 3. Adaptarea Grid-ului la o singură coloană pe mobil */
+    /* 1. CONTAINERUL PRINCIPAL */
     .main-container {
-        grid-template-areas: 
-            "page-header"
-            "page-nav"
-            "page-main"
-            "page-aside"
-            "page-footer";
-        grid-template-columns: 1fr; /* O singură coloană pe toată lățimea */
-        gap: 10px;
-    }
-    
-    /* Elimină separatorul de pe aside pe mobil */
-    .page-aside {
-        border-left: none;
-        border-top: 1px solid #e0e0e0;
+        width: 98%; /* Ocupă mai mult spațiu pe orizontală */
+        margin: 15px auto;
+        padding: 20px 15px; /* Reducem padding-ul intern */
+        box-shadow: none; /* Eliminăm umbra proeminentă pentru un aspect mai "flat" */
+        border-radius: 0; /* Opțional: colțuri drepte pe mobil */
+        padding-bottom: 50px; /* Adăugăm un padding mai mare sub container */
     }
 
-    /* 4. Fonturi adaptate pentru lizibilitate pe mobil */
+    /* 2. FONTURI ȘI TITLURI (Ajustare Font-size și Line-height) */
     body {
-        font-size: 100%; 
+        font-size: 17px; /* Font de bază setat la 17px pentru lizibilitate sporită */
     }
 
     h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-    }
-
-    /* Flexbox (Carduri) - Un element pe rând pe mobil */
-    .menu-flex-container li {
-        flex: 1 1 90%; 
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #6c9cd5;
     }
     
-    /* 5. Imagini centrate pe ecrane mici */
+    h2 {
+        font-size: 1.3em;
+        margin-top: 30px; 
+        margin-bottom: 20px;
+    }
+
+    /* 3. ELEMENTELE DE LISTĂ (Meniuri) */
+    .main-container ul {
+        margin-top: 10px;
+    }
+    
+    .main-container ul li {
+        padding: 14px 15px; /* Mărim padding-ul intern al elementelor de listă */
+    }
+    
+    /* 4. FORMULARE */
+    fieldset {
+        padding: 15px;
+        margin: 20px 0;
+        max-width: 100%; /* Aceasta asigură că pe mobil formularul ocupă toată lățimea containerului */
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="datetime-local"],
+    textarea,
+    select {
+        padding: 10px; /* Reducem padding-ul în input-uri */
+        font-size: 1em; /* Mărim fontul în input-uri pentru a fi mai ușor de citit */
+    }
+
+    /* 5. BUTOANE DE ROL (CatalogOnline.html) */
+    .role-button-list {
+        flex-direction: column; /* Afișare verticală pe mobil */
+        align-items: center; 
+        gap: 20px; /* Mărim gap-ul la 20px pentru mai mult spațiu vertical */
+    }
+
+    .role-button-list button {
+        width: 80%; /* Butoanele ocupă o lățime mai mare */
+        height: 80px; /* Le facem mai scurte */
+        font-size: 1em;
+        transform: none; /* Eliminăm efectul 3D la hover/tap pentru mobil */
+    }
+
+    .role-button-list button:hover {
+        transform: none; 
+    }
+    
+    /* 6. TABELE (Container responsiv pentru a permite scroll orizontal pe mobil) */
+    .table-responsive-wrapper {
+        overflow-x: auto; /* Permite scroll pe orizontală dacă tabelul este mai lat decât ecranul */
+        -webkit-overflow-scrolling: touch; /* Îmbunătățește scroll-ul pe iOS */
+        margin: 25px 0;
+    }
+    
+    /* Asigurăm că tabelul se comportă normal ÎN INTERIORUL wrapper-ului */
+    .table-responsive-wrapper table {
+        width: 100%;
+        min-width: 550px; /* Setează o lățime minimă pentru a forța scroll-ul, dacă este necesar */
+    }
+    
+    .table-responsive-wrapper th, 
+    .table-responsive-wrapper td {
+        padding: 16px; /* Mărim padding-ul intern din celulele de tabel */
+        font-size: 1.0em; 
+    }
+    
+    /* Stil pentru imagini (dacă le folosești) */
     img {
         max-width: 100%;
         height: auto;
-        display: block; 
-        margin: 10px auto; 
+        display: block;
+        margin: 0 auto; /* Centrare pe mobil */
     }
 }
