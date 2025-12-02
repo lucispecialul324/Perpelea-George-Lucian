@@ -1,9 +1,9 @@
 <?php
 // ParinteCatalog.php
 require_once 'db_connect.php';
-require_once 'auth_check.php';
+//require_once 'auth_check.php';
 
-check_authentication('parinte'); // Doar părinții au voie aici
+//check_authentication('parinte'); // Doar părinții au voie aici
 
 $parinte_id = $_SESSION['user_id'];
 $nume_parinte = $_SESSION['user_nume'];

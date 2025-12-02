@@ -1,13 +1,14 @@
 <?php
 // db_connect.php
 
-define('DB_SERVER', 'localhost');
-define('DB_USER', 'root');
+define('DB_HOST', 'mysql');
+define('DB_PORT', '3039');
+define('DB_USER', 'user');
 define('DB_PASS', 'password');      
-define('DB_NAME', 'proiect_tw');
+define('DB_NAME', 'studenti');
 
 try {
-    $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
+    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
     // Setăm modul de eroare să arunce excepții
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Setăm modul implicit de fetch ca array asociativ
