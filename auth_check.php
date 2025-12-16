@@ -1,17 +1,21 @@
 <?php
+// auth_check.php
 session_start();
 
+
 function check_authentication($rol_necesar = null) {
-    // 1. Verificăm dacă utilizatorul e logat
+    
+    // 1. Verifică Autentificarea
     if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_role'])) {
-        header("Location: CatalogOnline.html"); // Trimite-l înapoi la login
+        // Dacă nu e logat, îl trimite la pagina de login.
+        header("Location: CatalogOnline.php"); 
         exit();
     }
 
-    // 2. Verificăm dacă are rolul corect (ex: un elev nu poate intra la pagina de profesori)
+    // 2. Verifică Rolul
     if ($rol_necesar !== null && $_SESSION['user_role'] !== $rol_necesar) {
-        echo "Acces interzis! Nu aveți drepturile necesare.";
-        exit();
+        // Dacă e logat, dar rolul e greșit
+        die("Acces interzis! Nu aveți drepturile necesare pentru această secțiune.");
     }
 }
 ?>
