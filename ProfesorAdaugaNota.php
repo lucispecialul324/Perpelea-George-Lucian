@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// EXTRAGERE ELEVI DIN CLASA SELECTATĂ
+// EXTRAGERE ELEVI DIN CLASA SELECTATA
 $stmt = $pdo->prepare("SELECT id, nume, prenume FROM Utilizatori WHERE clasa_id = :cid AND rol='elev' ORDER BY nume");
 $stmt->execute([':cid' => $clasa_id]);
 $elevi = $stmt->fetchAll();
